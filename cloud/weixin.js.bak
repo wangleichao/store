@@ -49,6 +49,8 @@ var receiveMessage = function(msg, cb) {
 }
 // 接收消息/返回多图文信息
 var receiveImgMessage = function(msg, cb) {
+
+
   var item1={Title: '11',Description: '11',PicUrl: '' ,Url: ''};
   var item2={Title: '22',Description: '22',PicUrl: '' ,Url: ''};
   var item=new Array();
