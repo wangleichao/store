@@ -1,0 +1,22 @@
+ <% include head %>
+<div class="container  text-center ">
+
+欢迎    <%= user.get("username") %> 登陆联居宝
+
+
+
+	
+</div>
+<table class="easyui-datagrid" style="width: 100%; height: 0px;"
+		pagination="true" rownumbers="true"  id="dg"
+		data-options="url:'testQuery',fitColumns:true,singleSelect:true">
+		<thead>
+			<tr>
+			<th data-options="field:'objectId'">ID</th>
+				<th data-options="field:'name'">名字</th>
+				<th data-options="field:'foo'">内容</th>
+				<th data-options="field:'updatedAt'">更新时间</th>
+				<th data-options="field:'createdAt'">创建时间</th>
+			</tr>
+		</thead>
+	</table>

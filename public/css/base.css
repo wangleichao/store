@@ -1,0 +1,15 @@
+﻿	 label.success {
+			background: url(../img/mem-icon07.png) no-repeat 0 0px;
+			padding-left: 20px;
+			font-size: 12px;
+			color: red;
+			display: inline;
+		}
+		
+	 label.error {
+			background: url(../img/mem-icon08.png) no-repeat 0 0px;
+			padding-left: 20px;
+			font-size: 12px;
+			color: red;
+			display: inline;
+		}

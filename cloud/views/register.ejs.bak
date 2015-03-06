@@ -1,0 +1,128 @@
+ <% include head %>
+ <style>
+ 	 label.success {
+			background: url(../img/mem-icon07.png) no-repeat 0 0px;
+			padding-left: 20px;
+			font-size: 12px;
+			color: red;
+			display: inline;
+		}
+		
+	 label.error {
+			background: url(../img/mem-icon08.png) no-repeat 0 0px;
+			padding-left: 20px;
+			font-size: 12px;
+			color: red;
+			display: inline;
+		}
+ </style>
+<script>
+
+$.post("/test",function(data){
+	console.dir(data);
+},"json");
+  $(function () {
+    function empty(str) {
+      return str == null || str == '';
+    }
+  });
+</script>
+<script type="text/javascript">
+	$(function() {
+		jQuery.validator.addMethod("isMobile", function(value, element) {
+			var length = value.length;
+			var mobile = /^0?(13[0-9]|15[0-9]|18[0-9]|14[57])[0-9]{8}$/;
+			return this.optional(element)
+					|| (length == 11 && mobile.test(value));
+		}, "请正确填写您的手机号码");
+		jQuery.validator.addMethod("IDCardNo", function(value, element) {
+			var mobile = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+			return this.optional(element) || (mobile.test(value));
+		}, "请正确填写您的身份证号");
+		jQuery.validator.addMethod("IsNumber", function(value, element) {
+			var mobile = /^[0-9]*$/;
+			return this.optional(element) || (mobile.test(value));
+		}, "请输入数字");
+		jQuery.validator.addMethod("IsEmail", function(value, element) {
+			var mobile = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+			return this.optional(element) || (mobile.test(value));
+		}, "请输入正确的邮箱地址");
+		// 验证选项   
+		$("#loginForm").validate(
+				{
+					rules : {
+						onfocusout : true,
+						username : {
+							required : true,
+						},
+						password : {
+							required : true,
+						},
+						email : {
+							required : true,
+							IsEmail  : true
+						},
+						telphone : {
+							required : true,
+							isMobile : true
+						}
+					},
+					messages : {
+						username : {
+							required : "请输入用户名",
+						},
+						password : {
+							required : "请输入密码",
+						},
+						email : {
+							required : "请输入邮箱",
+							IsEmail  : "请输入正确的邮箱地址"
+						},
+						telphone : {
+							required : "请输入电话",
+							isMobile : "请正确填写您的手机号码"
+						}
+					},
+
+					errorPlacement : function(error, element) {
+						var ctId = $(element).attr("id") + "_validContainer";
+						if ($('#' + ctId).length == 0)
+							$(element).after($("<span/>").attr("id", ctId));
+						$('#' + ctId).html('').append(error);
+					},
+					success : function(label) {
+						$(label).html('&nbsp;').removeClass("error").addClass(
+								"success");
+					}
+				});
+	});
+</script>
+<div class="container  text-center ">
+
+  <form id="loginForm" class="search-form-middle" action="/register" method="POST">
+	<table>
+		<tr>
+			<td>用户名：</td>
+			<td><input id="username" name="username" type="text"/></td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td><input id="password" name="password" type="text"/></td>
+		</tr>
+		<tr>
+			<td>邮箱：</td>
+			<td><input id="email" name="email" type="text"/></td>
+		</tr>
+		<tr>
+			<td>手机：</td>
+			<td><input id="telphone" name="telphone" type="text"/></td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td> <input class="btn btn-default login-btn-width" name="go" type="submit" value="注册"></td>
+		</tr>
+	
+	
+	</table>
+  </form>
+</div>
