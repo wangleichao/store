@@ -1,7 +1,7 @@
 {
-    "applicationName" : "Demo1",
-    "applicationId": "yn9jd5578705pzlrtbm6lxr29cn46bdry24idm8cq46ehlwo",
-    "applicationKey": "6vg94rci1hrjujj4omoc9qexqnl5zdr2u1ns0pnehpxfbhq2",
+    "applicationName" : "weixin",
+    "applicationId": "2n1cgqbv82253mvdig4z8brs9i2vchgzi0ga502qd8yqjf9h",
+    "applicationKey": "mr881tp9t08idkdf6rurvpqjdeeg6dqa3ufqxwxomisrlypr",
     "global": {
         "avVersion": "0.3.1"
     }
