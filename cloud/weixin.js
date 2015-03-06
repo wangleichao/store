@@ -61,7 +61,8 @@ var receiveImgMessage = function(msg, cb) {
       CreateTime: new Date().getTime(),
       MsgType: 'news',
 	  ArticleCount: 2,
-	  item: item,
+	  item: item1,
+	  item: item2, 
       Article: ''
     }
   }
